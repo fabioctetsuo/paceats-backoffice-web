@@ -1,0 +1,6 @@
+// preset-env faz com que as coisas muito novas para o browser sejam entendidas
+// preset-react faz com que as coisas exclusivas do react sejam entendidas
+{
+  "presets": ["@babel/preset-env", "@babel/preset-react"],
+  "plugins": ["@babel/plugin-proposal-class-properties"]
+}
