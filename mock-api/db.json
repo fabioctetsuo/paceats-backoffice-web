@@ -1,9 +1,161 @@
 {
-  "posts": [
-    { "id": 1, "title": "json-server", "author": "typicode" }
+  "orders": [
+    {
+      "_id": "1",
+      "discount": 0,
+      "deletionDate": null,
+      "lastUpdate": "2019-09-15T20:21:45.309Z",
+      "orderCode": 6953,
+      "customer": {
+        "_id": "5d7e4aa403c7db247526f483",
+        "firstName": "Felipe",
+        "lastName": "Chan"
+      },
+      "deliveryAdress": {
+        "cep": "11111-111",
+        "adress": "Av. lins de vasconcelos",
+        "adressNumber": 4135,
+        "complement": "Apartamento 22"
+      },
+      "status": 1,
+      "restaurantId": "1",
+      "items": [
+        {
+          "quantity": 1,
+          "_id": "5d7e96e2064f734e1db34bd3",
+          "name": "Whopper Jr",
+          "price": 25.9
+        },
+        {
+          "quantity": 2,
+          "_id": "5d7e96e2064f734e1db34bd2",
+          "name": "Big King",
+          "price": 22.9
+        }
+      ],
+      "cupomCode": "",
+      "totalToPay": 71.7,
+      "extraDetails": "Carne mal passada",
+      "creationDate": "2019-09-15T19:54:10.464Z",
+      "__v": 0
+    },
+    {
+      "_id": "2",
+      "discount": 0,
+      "deletionDate": null,
+      "lastUpdate": "2019-09-15T20:21:45.309Z",
+      "orderCode": 6953,
+      "customer": {
+        "_id": "5d7e4aa403c7db247526f483",
+        "firstName": "Joselito",
+        "lastName": "Silva"
+      },
+      "deliveryAdress": {
+        "cep": "11111-111",
+        "adress": "Rua Casa do Ator",
+        "adressNumber": 919,
+        "complement": ""
+      },
+      "status": 2,
+      "restaurantId": "1",
+      "items": [
+        {
+          "quantity": 1,
+          "_id": "5d7e96e2064f734e1db34bd3",
+          "name": "Whopper Jr",
+          "price": 25.9
+        },
+        {
+          "quantity": 2,
+          "_id": "5d7e96e2064f734e1db34bd2",
+          "name": "Big King",
+          "price": 22.9
+        },
+        {
+          "quantity": 1,
+          "_id": "5d7e96e2064f734e1db34bd2",
+          "name": "Coca Cola 600ml",
+          "price": 8.0
+        }
+      ],
+      "cupomCode": "",
+      "totalToPay": 79.7,
+      "extraDetails": "Carne ao ponto",
+      "creationDate": "2019-09-15T19:54:10.464Z",
+      "__v": 0
+    },
+    {
+      "_id": "3",
+      "discount": 0,
+      "deletionDate": null,
+      "lastUpdate": "2019-09-16T20:21:45.309Z",
+      "orderCode": 6953,
+      "customer": {
+        "_id": "5d7e4aa403c7db247526f483",
+        "firstName": "Meredith",
+        "lastName": "Oliver"
+      },
+      "deliveryAdress": {
+        "cep": "11111-111",
+        "adress": "Rua Casa do Ator",
+        "adressNumber": 919,
+        "complement": ""
+      },
+      "status": 1,
+      "restaurantId": "2",
+      "items": [
+        {
+          "quantity": 1,
+          "_id": "5d7e96e2064f734e1db34bd3",
+          "name": "Whopper Jr",
+          "price": 25.9
+        },
+        {
+          "quantity": 1,
+          "_id": "5d7e96e2064f734e1db34bd2",
+          "name": "Coca Cola 600ml",
+          "price": 8.0
+        }
+      ],
+      "cupomCode": "",
+      "totalToPay": 33.9,
+      "extraDetails": "Carne ao ponto",
+      "creationDate": "2019-09-15T19:54:10.464Z",
+      "__v": 0
+    }
   ],
-  "comments": [
-    { "id": 1, "body": "some comment", "postId": 1 }
-  ],
-  "profile": { "name": "typicode" }
+  "users": [
+    {
+      "id": 1,
+      "name": "Joselito da Silva",
+      "email": "joselito@burgerking.com",
+      "password": "123456",
+      "phones": [
+        {
+          "number": "99999-9999",
+          "ddd": "11"
+        }
+      ],
+      "lastUpdate": null,
+      "creationDate": "2019-09-15T06:39:19.065Z",
+      "lastLogin": "2019-09-15T06:39:19.065Z",
+      "restaurantId": 1
+    },
+    {
+      "id": 2,
+      "name": "Mariana Cavagnolli",
+      "email": "mariana.cavagnolli@hotmail.com",
+      "password": "123456",
+      "phones": [
+        {
+          "number": "99999-9999",
+          "ddd": "11"
+        }
+      ],
+      "lastUpdate": null,
+      "creationDate": "2019-09-15T06:39:19.065Z",
+      "lastLogin": "2019-09-15T06:39:19.065Z",
+      "restaurantId": 2
+    }
+  ]
 }
