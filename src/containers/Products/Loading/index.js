@@ -1,8 +1,6 @@
 import React from 'react';
 import ContentLoader from 'react-content-loader';
 import { CustomCol } from '../styles';
-import ProductCard from '../../../components/ProductCard';
-// import { Container } from './styles';
 
 const TitleLoader = () => (
   <ContentLoader

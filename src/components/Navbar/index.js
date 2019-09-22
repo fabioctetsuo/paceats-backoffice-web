@@ -2,9 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import SvgIcon from '../SvgIcon';
+import { logout } from '../../services/authentication';
+import { colors } from '../../styles/colors';
 import { Container, MenuItem } from './styles';
 
-import { logout } from '../../services/authentication';
+const { primary } = colors.button;
 
 const Navbar = ({ history }) => (
   <Container>
@@ -19,7 +21,7 @@ const Navbar = ({ history }) => (
         width={32}
         height={32}
         viewBox="0 0 32 32"
-        color="#81e398"
+        color={primary.background}
       />
       Início
     </MenuItem>
@@ -34,7 +36,7 @@ const Navbar = ({ history }) => (
         width={32}
         height={32}
         viewBox="-6 -6 32 32"
-        color="#81e398"
+        color={primary.background}
       />
       Pedidos
     </MenuItem>
@@ -49,7 +51,7 @@ const Navbar = ({ history }) => (
         width={32}
         height={32}
         viewBox="-9 -3 32 32"
-        color="#81e398"
+        color={primary.background}
       />
       Produtos
     </MenuItem>
@@ -59,7 +61,7 @@ const Navbar = ({ history }) => (
         width={32}
         height={32}
         viewBox="-7 -6 32 32"
-        color="#81e398"
+        color={primary.background}
       />
       Sair
     </MenuItem>

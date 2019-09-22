@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { Container as Grid, Col } from 'react-awesome-styled-grid';
+import { Col } from 'react-awesome-styled-grid';
 import OrderCard, { CardLoader } from '../../components/OrderCard';
 import OrderDetails from '../../components/OrderDetails';
 import OrderDetailsModal from '../../components/OrderDetailsModal';
@@ -20,6 +20,7 @@ import {
   TitleHead,
   CustomRow,
   MobileContainer,
+  CustomGrid,
 } from './styles';
 
 const handleOrderCardClick = (order, setOrder) => setOrder(order);
@@ -90,7 +91,7 @@ const Orders = ({ isMobileSized }) => {
             </CustomScrollbar>
           </OrdersWrapper>
           {!isMobileSized && (
-            <Grid fluid={false}>
+            <CustomGrid fluid={false}>
               <CustomRow>
                 <Col xs={4} sm={8} md={12} lg={12} xl={12}>
                   <OrderDetails orders={data} order={order} />
@@ -107,7 +108,7 @@ const Orders = ({ isMobileSized }) => {
                   </Col>
                 ))}
               </CustomRow>
-            </Grid>
+            </CustomGrid>
           )}
           {isMobileSized && (
             <MobileContainer hasOrder={order}>

@@ -4,11 +4,11 @@ import { useDispatch } from 'react-redux';
 
 import SelectBox from '../SelectBox';
 import { SubHeadlineText } from '../Typography';
-
+import PrimaryButton from '../Button/Primary';
 import { ActionCreators as OrderStatusActions } from '../../store/ducks/orderStatus';
 import { ORDER_CODE, orderStatusMap } from '../../utils/getOrderStatus';
 
-import { OrderActions, ActionsWrapper, CustomButtom } from './styles';
+import { OrderActions, ActionsWrapper } from './styles';
 
 const Actions = ({ order, optionSelected, setSelected }) => {
   const dispatch = useDispatch();
@@ -25,15 +25,17 @@ const Actions = ({ order, optionSelected, setSelected }) => {
         onChange={(e) => setSelected(e)}
       />
       <ActionsWrapper>
-        <CustomButtom onClick={() => {
-          dispatch(OrderStatusActions.addOrderStatusRequest({
-            _id: order._id,
-            newStatus: optionSelected.value,
-          }));
-        }}
+        <PrimaryButton
+          width="100%"
+          onClick={() => {
+            dispatch(OrderStatusActions.addOrderStatusRequest({
+              _id: order._id,
+              newStatus: optionSelected.value,
+            }));
+          }}
         >
           Enviar
-        </CustomButtom>
+        </PrimaryButton>
       </ActionsWrapper>
     </OrderActions>
   );
