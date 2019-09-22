@@ -157,5 +157,44 @@
       "lastLogin": "2019-09-15T06:39:19.065Z",
       "restaurantId": 2
     }
+  ],
+  "restaurants": [
+    {
+      "description": "Burger King Corporation, empresa de restaurantes especializada em hambúrgueres de fast-food assados na chama. É a segunda maior rede de hambúrgueres dos Estados Unidos, depois do McDonald's. No início do século XXI, o Burger King afirmou ter cerca de 14.000 lojas em quase 100 países. A sede fica em Miami, Flórida.",
+      "image": "https://res-4.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_256,w_256,f_auto,q_auto:eco/v1488266135/vw9dwa2fbgqzdmkizszx.png",
+      "deletionDate": null,
+      "lastUpdate": "2019-09-15T16:31:52.926Z",
+      "_id": "1",
+      "name": "Burger King",
+      "type": "Hamburgueria",
+      "plates": [
+          {
+              "quantity": 1,
+              "image": "https://www.bk.com/sites/default/files/02982-1_BK_Web_BaconKingJr_500x540_CR.png",
+              "_id": "1",
+              "name": "Bacon King Jr.",
+              "price": 35,
+              "description": "Apresentando o sanduíche BACON KING ™ Jr., embalagem menor, com o mesmo sabor GRANDE. Dois hambúrgueres de carne 100% grelhados à chama, cobertos com bacon defumado grosso, queijo americano derretido, ketchup e maionese cremosa em um pão torrado de gergelim."
+          },
+          {
+              "quantity": 2,
+              "image": "https://www.bk.com/sites/default/files/03795-2_BK_Web_TripleStackerKing_500x540_CR.png",
+              "_id": "2",
+              "name": "Stacker Triplo",
+              "price": 32,
+              "description": "Nosso sanduíche Triple STACKER KING ™ apresenta mais de ¾ lb. * de carne saborosa 100% grelhada em chamas, coberta com bacon defumado, queijo americano derretido e nosso molho Stacker especial em um pão de gergelim torrado."
+          },
+          {
+              "quantity": 2,
+              "image": "https://www.bk.com/sites/default/files/02982-1_BK_Web_QuarterPndKing_500x540_CR.png",
+              "_id": "3",
+              "name": "Quarteirão",
+              "price": 28,
+              "description": "Nosso sanduíche Quarteirão tem mais de 1 kg de carne 100% grelhada em chamas, com todos os nossos clássicos favoritos: queijo americano, cebola fatiada na hora, picles picantes, ketchup e mostarda, tudo em um pão torrado de gergelim."
+          }
+      ],
+      "creationDate": "2019-09-15T17:00:48.505Z",
+      "__v": 0
+    }
   ]
 }

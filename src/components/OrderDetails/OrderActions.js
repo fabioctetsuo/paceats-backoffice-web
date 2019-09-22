@@ -6,7 +6,6 @@ import SelectBox from '../SelectBox';
 import { SubHeadlineText } from '../Typography';
 
 import { ActionCreators as OrderStatusActions } from '../../store/ducks/orderStatus';
-import { ActionCreators as OrdersActions } from '../../store/ducks/orders';
 import { ORDER_CODE, orderStatusMap } from '../../utils/getOrderStatus';
 
 import { OrderActions, ActionsWrapper, CustomButtom } from './styles';
@@ -31,7 +30,6 @@ const Actions = ({ order, optionSelected, setSelected }) => {
             _id: order._id,
             newStatus: optionSelected.value,
           }));
-          dispatch(OrdersActions.addOrderRequest());
         }}
         >
           Enviar

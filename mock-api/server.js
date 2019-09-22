@@ -76,6 +76,20 @@ server.put('/order/status', (req, res) => {
   });
 });
 
+server.get('/restaurant/details/:_id', (req, res) => {
+  const { _id } = req.params;
+  const { db } = router;
+  const restaurant = db
+    .get('restaurants')
+    // eslint-disable-next-line eqeqeq
+    .find((e) => e._id === _id)
+    .value();
+  if (!restaurant) {
+    return res.jsonp({});
+  }
+  return res.jsonp(restaurant);
+});
+
 server.use(router);
 
 server.listen(4000, () => {
