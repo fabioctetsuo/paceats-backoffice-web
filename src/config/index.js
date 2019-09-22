@@ -1,7 +1,11 @@
 const { NODE_ENV: environment } = process.env;
 
+const isDev = environment === 'development';
+const localUrl = 'http://localhost:4000';
+const paceatsUrl = 'https://paceats-api.herokuapp.com/api/v1';
+
 export default {
-  authorization: {
-    apiUrl: environment === 'development' ? 'http://localhost:4000' : 'http://api.apilouca.com/',
+  paceatsApi: {
+    apiUrl: isDev ? localUrl : paceatsUrl,
   },
 };

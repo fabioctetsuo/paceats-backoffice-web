@@ -1,0 +1,26 @@
+.wrapper {
+  align-items: center;
+  display: flex;
+  font-size: 15px;
+  line-height: 100%;
+}
+
+.bottom,
+.top {
+  align-items: center;
+  flex-direction: column-reverse;
+  justify-content: center;
+  text-align: center;
+}
+
+.top {
+  flex-direction: column;
+}
+
+.left {
+  flex-direction: row;
+}
+
+.right {
+  flex-direction: row-reverse;
+}
