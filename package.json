@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "engines": {
+    "npm": "12.10.0",
+    "yarn": "1.17.3"
+  },
   "scripts": {
     "start:dev": "concurrently --kill-others \"yarn run start:mock\" \"yarn run build:dev\"",
     "start": "yarn run build:prod",
