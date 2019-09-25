@@ -18,7 +18,9 @@ server.post('/public/auth/signin', (req, res) => {
     .find({ email })
     .value();
   if (!user || user.password !== password) {
-    return res.jsonp({ mensagem: 'Usuário e/ou password inválidos' });
+    return res.status(401).jsonp({
+      mensagem: 'Usuário e/ou password inválidos',
+    });
   }
   return res.jsonp({
     _id: user.id,
@@ -35,8 +37,7 @@ server.get('/order/restaurant/:restaurantId', (req, res) => {
   const { db } = router;
   const orders = db
     .get('orders')
-    // eslint-disable-next-line eqeqeq
-    .filter((e) => e.restaurantId == restaurantId)
+    .filter((e) => e.restaurantId === restaurantId)
     .value();
   if (!orders || !orders.length) {
     return res.jsonp([]);
@@ -52,7 +53,12 @@ server.put('/order/status', (req, res) => {
     .find({ _id })
     .value();
   // eslint-disable-next-line eqeqeq
-  lodash.remove(db.get('orders').value(), (o) => o._id == _id);
+  if (!order) {
+    return res.status(404).jsonp({
+      mensagem: 'Recurso não encontrado',
+    });
+  }
+  lodash.remove(db.get('orders').value(), (o) => o._id === _id);
   db.get('orders')
     .push({ ...order, status: newStatus })
     .write();
@@ -88,6 +94,41 @@ server.get('/restaurant/details/:_id', (req, res) => {
     return res.jsonp({});
   }
   return res.jsonp(restaurant);
+});
+
+server.post('/restaurant/plate', (req, res) => {
+  const { restaurantId, plates } = req.body;
+  const newPlates = plates.map((p) => ({ ...p, _id: Math.random().toString() }));
+  const { db } = router;
+  const restaurant = db
+    .get('restaurants')
+    .find({ _id: restaurantId })
+    .value();
+  lodash.remove(db.get('restaurants').value(), (r) => r._id === restaurantId);
+  db.get('restaurants')
+    .push({ ...restaurant, plates: [...restaurant.plates, ...newPlates] })
+    .write();
+  return res.jsonp({
+    restaurantId: '5d7e7348a298f539ae25b823',
+    message: 'plates added successfully',
+  });
+});
+
+server.delete('/restaurant/:restaurantId/plate/:plateId', (req, res) => {
+  const { restaurantId, plateId } = req.params;
+  const { db } = router;
+  const restaurant = db
+    .get('restaurants')
+    .find({ _id: restaurantId })
+    .value();
+  lodash.remove(db.get('restaurants').value(), (r) => r._id === restaurantId);
+  const plates = restaurant.plates.filter((p) => p._id !== plateId);
+  db.get('restaurants')
+    .push({ ...restaurant, plates })
+    .write();
+  return res.jsonp({
+    message: 'Prato removido com sucesso',
+  });
 });
 
 server.use(router);

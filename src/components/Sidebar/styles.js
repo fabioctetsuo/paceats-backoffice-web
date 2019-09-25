@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import { colors } from '../../styles/colors';
+
+const { primary } = colors.button;
 
 export const Container = styled.aside`
   height: 100%;
@@ -7,6 +10,7 @@ export const Container = styled.aside`
   display: flex;
   flex-direction: column;
   padding: 8px 0;
+  position: fixed;
 `;
 
 export const TopWrapper = styled.div`
@@ -28,11 +32,12 @@ export const MenuItem = styled.button`
   align-items: center;
   outline: none;
   cursor: pointer;
-  color: #81e398;
+  color: ${primary.background};
   font-size: 10px;
   font-family: 'Open sans', sans-serif;
   transition: background 0.2s;
   &:hover {
     background: #313341;
+    color: ${primary.hover}
   }
 `;

@@ -111,26 +111,3 @@ export const ActionsWrapper = styled.div`
   flex-direction: row;
   margin: 8px 0;
 `;
-
-export const CustomButtom = styled.button`
-  width: 100%;
-  height: 40px;
-  background: #33a672;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s;
-  outline: none;
-  border-radius: 8px;
-  font-weight: bold;
-  color: #fff;
-  line-height: 1.25;
-  font-size: 14px;
-
-  &:hover {
-    background: #41cc8d;
-  }
-
-  &:active {
-    background: #277a55;
-  }
-`;

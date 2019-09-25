@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Image from './Image';
 import SvgIcon from '../SvgIcon';
+import SecondaryButton from '../Button/Secondary';
 import { formatMoney } from '../../utils/currencyFormatter';
 
 import {
@@ -13,12 +14,11 @@ import {
   Title,
   Description,
   ActionContainer,
-  CustomButton,
   Price,
   Wrapper,
 } from './styles';
 
-const ProductCard = ({ plate }) => {
+const ProductCard = ({ plate, onDelete }) => {
   const {
     image,
     name,
@@ -34,14 +34,14 @@ const ProductCard = ({ plate }) => {
         <ContentInfo>
           <ProductInfo>
             <Wrapper>
-              <Title title="The Black Bpx">{name}</Title>
+              <Title title={name}>{name}</Title>
               <Price>{formatMoney(price)}</Price>
             </Wrapper>
             <Description title={description}>{description}</Description>
           </ProductInfo>
         </ContentInfo>
         <ActionContainer>
-          <CustomButton>
+          {/* <SecondaryButton>
             <SvgIcon
               color="#3FA99B"
               icon="EDIT_ICON"
@@ -50,18 +50,18 @@ const ProductCard = ({ plate }) => {
               margin="0 11px 0 0"
             />
             Editar
-          </CustomButton>
-          <CustomButton>
+          </SecondaryButton> */}
+          <SecondaryButton onClick={onDelete}>
             <SvgIcon
               color="#3FA99B"
               icon="DELETE_ICON"
-              width={24}
-              height={24}
-              viewBox="-2 -1 20 20"
+              width={16}
+              height={16}
+              viewBox="0 0 16 16"
               margin="0 11px 0 0"
             />
             Excluir
-          </CustomButton>
+          </SecondaryButton>
         </ActionContainer>
       </Content>
     </Container>
@@ -75,11 +75,7 @@ ProductCard.propTypes = {
     description: PropTypes.string,
     image: PropTypes.string,
   }).isRequired,
-  loading: PropTypes.bool,
-};
-
-ProductCard.defaultProps = {
-  loading: true,
+  onDelete: PropTypes.func.isRequired,
 };
 
 export default ProductCard;

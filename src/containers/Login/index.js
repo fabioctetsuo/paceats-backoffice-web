@@ -9,10 +9,8 @@ import {
   InputField,
   CustomSubheadLine,
   InputContainer,
-  CustomButton,
-  Title,
-  CustomHeadline,
 } from './styles';
+import PrimaryButton from '../../components/Button/Primary';
 import WindowDimensions from '../../components/WindowDimensions';
 import { ActionCreators as AuthActions } from '../../store/ducks/authentication';
 import { login } from '../../services/authentication';
@@ -23,6 +21,7 @@ const redirectUser = (data, history) => {
   login(accessToken, restaurantId);
   return history.push('/orders');
 };
+
 
 const Login = ({ history, isMobileSized }) => {
   const dispatch = useDispatch();
@@ -38,15 +37,12 @@ const Login = ({ history, isMobileSized }) => {
     <Container>
       {!isMobileSized && <LoginBackground />}
       <LoginContainer isMobileSized={isMobileSized}>
-        <Title>
-          <CustomHeadline>PacEats</CustomHeadline>
-        </Title>
         <CustomSubheadLine>Portal do parceiro</CustomSubheadLine>
         <p>Gerencie seu restaurante de forma fácil e rápida</p>
         <form
-          onSubmit={async (e) => {
+          onSubmit={(e) => {
             e.preventDefault();
-            await dispatch(AuthActions.addAuthRequest({ email, password }));
+            dispatch(AuthActions.addAuthRequest({ email, password }));
           }}
         >
           <InputContainer>
@@ -57,6 +53,7 @@ const Login = ({ history, isMobileSized }) => {
               placeholder="nome@email.com.br"
               value={email}
               type="email"
+              disabled={loading}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
@@ -67,11 +64,18 @@ const Login = ({ history, isMobileSized }) => {
               placeholder="Insira sua senha secreta"
               value={password}
               type="password"
+              disabled={loading}
               onChange={(e) => setPassword(e.target.value)}
               required
             />
           </InputContainer>
-          <CustomButton>{loading ? 'Carregando' : 'Entrar'}</CustomButton>
+          <PrimaryButton
+            width="100%"
+            margin="32px 0 0 0"
+            disabled={loading}
+          >
+            {loading ? 'Carregando' : 'Entrar'}
+          </PrimaryButton>
         </form>
       </LoginContainer>
     </Container>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Container } from './styles';
+import { Container, Content } from './styles';
 import Sidebar from '../Sidebar';
 import Navbar from '../Navbar';
 import WindowDimenstions from '../WindowDimensions';
@@ -19,7 +19,9 @@ const Layout = ({ children, isMobileSized }) => {
   return (
     <Container sidebarOpen={sidebarOpen}>
       {sidebarOpen && <Sidebar />}
-      {children}
+      <Content isMobileSized={isMobileSized}>
+        {children}
+      </Content>
       {isMobileSized && <Navbar />}
     </Container>
   );

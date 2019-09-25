@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { Row } from 'react-awesome-styled-grid';
+import { Container as Grid, Row } from 'react-awesome-styled-grid';
 
 export const Container = styled.div`
-  width: calc(100% - ${({ isMobile }) => (isMobile ? '0px' : '65px')});
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: row;
@@ -37,4 +37,8 @@ export const MobileContainer = styled.div`
   position: absolute;
   display: ${({ hasOrder }) => (hasOrder ? 'flex' : 'none')};
   background-color: rgba(0, 0, 0, 0.5);
+`;
+
+export const CustomGrid = styled(Grid)`
+  overflow: auto;
 `;

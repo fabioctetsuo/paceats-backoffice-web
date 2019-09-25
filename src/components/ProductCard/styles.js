@@ -59,31 +59,6 @@ export const ActionContainer = styled.div`
   justify-content: flex-end;
 `;
 
-export const CustomButton = styled.button`
-  background: none;
-  font-size: 14px;
-  font-weight: bold;
-  letter-spacing: 1.29px;
-  line-height: 16px;
-  text-align: center;
-  color: #3FA99B;;
-  border-radius: 18.5px;
-  padding: 10px 16px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  transition: background .2s;
-  cursor: pointer;
-  outline: none;
-
-  &:hover {
-    background-color: #D8F5F5;
-    color: #2B9486;
-  }
-`;
-
 export const Price = styled.p`
   font-size: 14px;
   font-weight: bold;

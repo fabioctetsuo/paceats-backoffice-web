@@ -2,9 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import SvgIcon from '../SvgIcon';
-import { logout } from '../../services/authentication';
 import WindowDimensions from '../WindowDimensions';
+import { logout } from '../../services/authentication';
+import { colors } from '../../styles/colors';
 import { Container, TopWrapper, MenuItem } from './styles';
+
+const { primary } = colors.button;
 
 const Sidebar = ({ history }) => (
   <Container>
@@ -20,7 +23,7 @@ const Sidebar = ({ history }) => (
           width={32}
           height={32}
           viewBox="0 0 32 32"
-          color="#81e398"
+          color={primary.background}
         />
         Início
       </MenuItem>
@@ -35,7 +38,7 @@ const Sidebar = ({ history }) => (
           width={32}
           height={32}
           viewBox="-6 -3 32 32"
-          color="#81e398"
+          color={primary.background}
         />
         Pedidos
       </MenuItem>
@@ -50,7 +53,7 @@ const Sidebar = ({ history }) => (
           width={32}
           height={32}
           viewBox="-9 -3 32 32"
-          color="#81e398"
+          color={primary.background}
         />
         Produtos
       </MenuItem>
@@ -61,7 +64,7 @@ const Sidebar = ({ history }) => (
         width={32}
         height={32}
         viewBox="-7 -6 32 32"
-        color="#81e398"
+        color={primary.background}
       />
       Sair
     </MenuItem>
