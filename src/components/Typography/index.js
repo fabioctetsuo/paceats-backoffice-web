@@ -22,8 +22,9 @@ export const SubHeadlineText = styled(TextConfig)`
 
 export const SubTitle = styled(TextConfig)`
   color: ${({ color }) => color || '#9898A7'};
-  font-size: 12px;
+  font-size: ${({ fontSize }) => (fontSize || '12px')};
   letter-spacing: 0.41px;
+  margin: ${({ margin }) => (margin || '0')};
 `;
 
 export const ButtonText = styled(TextConfig)`

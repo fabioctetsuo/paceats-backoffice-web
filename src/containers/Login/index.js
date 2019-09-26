@@ -19,7 +19,7 @@ const redirectUser = (data, history) => {
   const { accessToken, restaurantId } = data || {};
   if (!accessToken || !restaurantId) return null;
   login(accessToken, restaurantId);
-  return history.push('/orders');
+  return history.push('/');
 };
 
 

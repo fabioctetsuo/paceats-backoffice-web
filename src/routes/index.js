@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Login from '../containers/Login';
 import Orders from '../containers/Orders';
 import Products from '../containers/Products';
+import Home from '../containers/Home';
 import { isAuthenticated } from '../services/authentication';
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
@@ -37,11 +38,7 @@ const LoginRoute = ({ component: Component, ...rest }) => (
 const Routes = () => (
   <BrowserRouter>
     <Switch>
-      <PrivateRoute
-        exact
-        path="/"
-        component={() => <h1>Página principal</h1>}
-      />
+      <PrivateRoute exact path="/" component={Home} />
       <LoginRoute exact path="/login" component={Login} />
       <PrivateRoute exact path="/orders" component={Orders} />
       <PrivateRoute exact path="/products" component={Products} />

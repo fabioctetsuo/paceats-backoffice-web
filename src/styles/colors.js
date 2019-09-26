@@ -1,7 +1,9 @@
+const primaryColor = '#58C2B4';
+
 export const colors = {
   button: {
     primary: {
-      background: '#58C2B4',
+      background: primaryColor,
       color: '#fff',
       hover: '#6FDCCB',
       click: '#3FA99B',
@@ -29,6 +31,12 @@ export const colors = {
       click: '#B4F1EA',
       disabled: 'none',
       disabledColor: '#A6A6B0',
+    },
+  },
+  alert: {
+    success: {
+      background: primaryColor,
+      color: '#fff',
     },
   },
 };
