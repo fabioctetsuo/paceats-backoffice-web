@@ -13,6 +13,7 @@ import { CustomCol, NewProductButton } from './styles';
 const Products = () => {
   const dispatch = useDispatch();
   const [openForm, setOpenForm] = useState(false);
+  const [product, setProduct] = useState(null);
   const { loading, data } = useSelector(({ restaurant }) => restaurant);
   const { plates } = data || {};
 
@@ -41,6 +42,10 @@ const Products = () => {
                 <ProductCard
                   key={plate._id}
                   plate={plate}
+                  onEdit={() => {
+                    setProduct(plate);
+                    setOpenForm(!openForm);
+                  }}
                   onDelete={() => dispatch(
                     RestaurantPlateActions.removeRestaurantPlateRequest({
                       restaurantId: getRestaurantId(),
@@ -53,7 +58,15 @@ const Products = () => {
           </Row>
         </Container>
       )}
-      {openForm && <ProductForm onCancel={() => setOpenForm(!openForm)} />}
+      {openForm && (
+        <ProductForm
+          productData={product}
+          onCancel={() => {
+            setOpenForm(!openForm);
+            setProduct(null);
+          }}
+        />
+      )}
     </Layout>
   );
 };

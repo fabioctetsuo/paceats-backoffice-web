@@ -8,7 +8,7 @@ import { Types as RestarauntPlatesTypes } from '../ducks/plates';
 import { authenticateUser } from './authentication';
 import { changeOrderStatus } from './orderStatus';
 import { getRestaurant } from './restaurant';
-import { createPlate, deletePlate } from './plates';
+import { createPlate, deletePlate, updatePlate } from './plates';
 
 export default function* rootSaga() {
   yield all([
@@ -18,5 +18,6 @@ export default function* rootSaga() {
     takeLatest(RestarauntTypes.ADD_REQUEST, getRestaurant),
     takeLatest(RestarauntPlatesTypes.ADD_REQUEST, createPlate),
     takeLatest(RestarauntPlatesTypes.REMOVE_REQUEST, deletePlate),
+    takeLatest(RestarauntPlatesTypes.UPDATE_REQUEST, updatePlate),
   ]);
 }

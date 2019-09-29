@@ -96,7 +96,7 @@ server.get('/restaurant/details/:_id', (req, res) => {
   return res.jsonp(restaurant);
 });
 
-server.post('/restaurant/plate', (req, res) => {
+server.post('/plate', (req, res) => {
   const { restaurantId, plates } = req.body;
   const newPlates = plates.map((p) => ({ ...p, _id: Math.random().toString() }));
   const { db } = router;
@@ -114,7 +114,26 @@ server.post('/restaurant/plate', (req, res) => {
   });
 });
 
-server.delete('/restaurant/:restaurantId/plate/:plateId', (req, res) => {
+server.put('/plate', (req, res) => {
+  const { restaurantId, plate } = req.body;
+  const { db } = router;
+  const restaurant = db
+    .get('restaurants')
+    .find({ _id: restaurantId })
+    .value();
+  lodash.remove(db.get('restaurants').value(), (r) => r._id === restaurantId);
+  const { plates } = restaurant;
+  lodash.remove(plates, (p) => p._id === plate._id);
+  db.get('restaurants')
+    .push({ ...restaurant, plates: [...plates, plate] })
+    .write();
+  return res.jsonp({
+    restaurantId: '5d7e7348a298f539ae25b823',
+    message: 'plates added successfully',
+  });
+});
+
+server.delete('/plate/:restaurantId/:plateId', (req, res) => {
   const { restaurantId, plateId } = req.params;
   const { db } = router;
   const restaurant = db

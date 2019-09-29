@@ -6,6 +6,7 @@ export const Container = styled.div`
   border-radius: 8px;
   background: #fff;
   box-shadow: 0 2px 4px 0 rgba(33,54,79,0.32);
+  overflow: hidden;
 `;
 
 export const Header = styled.header`
@@ -56,7 +57,7 @@ export const ActionContainer = styled.div`
   display: flex;
   flex-direction: row;
   width: auto;
-  justify-content: flex-end;
+  justify-content: space-between;
 `;
 
 export const Price = styled.p`

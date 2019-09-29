@@ -7,6 +7,8 @@ export const Types = {
   ADD_FAILURE: 'restaurant/plates/ADD_FAILURE',
   REMOVE_REQUEST: 'restaurant/plates/REMOVE_REQUEST',
   REMOVE_SUCCESS: 'restaurant/plates/REMOVE_SUCCESS',
+  UPDATE_REQUEST: 'restaurant/plates/UPDATE_REQUEST',
+  UPDATE_SUCCESS: 'restaurant/plates/UPDATE_SUCCESS',
 };
 
 /*
@@ -38,6 +40,15 @@ export default function (state = INITIAL_STATE, action) {
         loading: false,
         error: null,
       };
+    case Types.UPDATE_REQUEST:
+      return { ...state, loading: true };
+    case Types.UPDATE_SUCCESS:
+      return {
+        ...state,
+        data: { ...action.payload.data },
+        loading: false,
+        error: null,
+      };
     case Types.ADD_FAILURE:
       return { ...state, loading: false, error: action.payload.error };
     default:
@@ -63,12 +74,23 @@ export const ActionCreators = {
     type: Types.ADD_FAILURE,
     payload: { error },
   }),
+
   removeRestaurantPlateRequest: (restaurantPlate) => ({
     type: Types.REMOVE_REQUEST,
     payload: { restaurantPlate },
   }),
   removeRestaurantPlateSuccess: (data) => ({
     type: Types.REMOVE_SUCCESS,
+    payload: { data },
+  }),
+
+  updateRestaurantPlatesRequest: (restaurantPlates) => ({
+    type: Types.UPDATE_REQUEST,
+    payload: { restaurantPlates },
+  }),
+
+  updateRestaurantPlatesSuccess: (data) => ({
+    type: Types.UPDATE_SUCCESS,
     payload: { data },
   }),
 };

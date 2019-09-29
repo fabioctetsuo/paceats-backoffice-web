@@ -18,7 +18,7 @@ import {
   Wrapper,
 } from './styles';
 
-const ProductCard = ({ plate, onDelete }) => {
+const ProductCard = ({ plate, onDelete, onEdit }) => {
   const {
     image,
     name,
@@ -41,7 +41,7 @@ const ProductCard = ({ plate, onDelete }) => {
           </ProductInfo>
         </ContentInfo>
         <ActionContainer>
-          {/* <SecondaryButton>
+          <SecondaryButton onClick={onEdit}>
             <SvgIcon
               color="#3FA99B"
               icon="EDIT_ICON"
@@ -50,7 +50,7 @@ const ProductCard = ({ plate, onDelete }) => {
               margin="0 11px 0 0"
             />
             Editar
-          </SecondaryButton> */}
+          </SecondaryButton>
           <SecondaryButton onClick={onDelete}>
             <SvgIcon
               color="#3FA99B"
@@ -76,6 +76,7 @@ ProductCard.propTypes = {
     image: PropTypes.string,
   }).isRequired,
   onDelete: PropTypes.func.isRequired,
+  onEdit: PropTypes.func.isRequired,
 };
 
 export default ProductCard;
