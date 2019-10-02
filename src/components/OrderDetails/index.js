@@ -10,7 +10,6 @@ import OrderActions from './OrderActions';
 const OrderDetails = ({ order }) => {
   const {
     customer,
-    deliveryAdress,
     items = [],
     discount,
     totalToPay,
@@ -28,7 +27,7 @@ const OrderDetails = ({ order }) => {
       <Section hasOrder={order}>
         {order && (
           <>
-            <CustomerInfo customer={customer} deliveryAdress={deliveryAdress} />
+            <CustomerInfo customer={customer} />
             <OrderItems
               items={items}
               discount={discount}

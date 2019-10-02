@@ -12,7 +12,7 @@
     "start:dev": "concurrently --kill-others \"yarn run start:mock\" \"yarn run build:dev\"",
     "start": "yarn run build",
     "build:dev": "webpack-dev-server --mode development",
-    "build": "webpack --mode production",
+    "build": "webpack-dev-server --mode production",
     "start:mock": "node mock-api/server.js",
     "start:mock:debug": "node --inspect mock-api/server.js",
     "heroku-prebuild": "yarn install --production=false",
