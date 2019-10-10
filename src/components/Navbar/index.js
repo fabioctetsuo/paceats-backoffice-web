@@ -55,6 +55,21 @@ const Navbar = ({ history }) => (
       />
       Produtos
     </MenuItem>
+    <MenuItem
+      onClick={(e) => {
+        e.preventDefault();
+        history.push('/reports');
+      }}
+    >
+      <SvgIcon
+        icon="REPORTS"
+        width={32}
+        height={32}
+        viewBox="-9 -3 32 32"
+        color={primary.background}
+      />
+      Relatórios
+    </MenuItem>
     <MenuItem onClick={() => logout(() => window.location.replace('/'))}>
       <SvgIcon
         icon="LOGOUT"

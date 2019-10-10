@@ -9,7 +9,12 @@ import {
   TextDetails,
 } from './styles';
 
-const Items = ({ items, discount, totalToPay }) => {
+const Items = ({
+  items,
+  discount,
+  totalToPay,
+  extraDetails,
+}) => {
   const itemsMap = [
     {
       label: 'Subtotal: ',
@@ -40,6 +45,14 @@ const Items = ({ items, discount, totalToPay }) => {
           </ItemWrapper>
         ))}
       </ItemContainer>
+
+      <ItemContainer>
+        <ItemWrapper>
+          <TextDetails>Observação: </TextDetails>
+          <TextDetails>{extraDetails}</TextDetails>
+        </ItemWrapper>
+      </ItemContainer>
+
       {itemsMap.map((e) => (
         <ItemContainer>
           <ItemWrapper>
@@ -56,6 +69,11 @@ Items.propTypes = {
   items: PropTypes.arrayOf().isRequired,
   discount: PropTypes.number.isRequired,
   totalToPay: PropTypes.number.isRequired,
+  extraDetails: PropTypes.string,
+};
+
+Items.defaultProps = {
+  extraDetails: '',
 };
 
 export default Items;

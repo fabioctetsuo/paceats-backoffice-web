@@ -3,12 +3,15 @@ import PropTypes from 'prop-types';
 import { SubHeadlineText } from '../Typography';
 import { Customer, Wrapper, TextDetails } from './styles';
 
-const CustomerInfo = ({ customer }) => (
+const CustomerInfo = ({ customer, donation }) => (
   <Customer>
     <Wrapper>
-      <SubHeadlineText>Cliente</SubHeadlineText>
+      <SubHeadlineText>Informações</SubHeadlineText>
       <TextDetails>
-        Nome: {customer.firstName} {customer.lastName}
+        Cliente: {customer.firstName} {customer.lastName}
+      </TextDetails>
+      <TextDetails>
+        Organização beneficiada: {donation.ongName}
       </TextDetails>
     </Wrapper>
   </Customer>
@@ -16,6 +19,7 @@ const CustomerInfo = ({ customer }) => (
 
 CustomerInfo.propTypes = {
   customer: PropTypes.shape().isRequired,
+  donation: PropTypes.shape().isRequired,
 };
 
 export default CustomerInfo;

@@ -18,13 +18,13 @@ export const orderStatusMap = [
     value: ORDER_CODE.IN_PROGRESS,
     label: 'Em andamento',
     color: '#fff',
-    background: '#5397b0',
+    background: '#f5bc42',
   },
   {
     value: ORDER_CODE.WAITING_WITHDRAWN,
     label: 'Aguardando retirada',
     color: '#fff',
-    background: '#5dc75f',
+    background: '#5397b0',
   },
   {
     value: ORDER_CODE.RESTAURANT_CANCELED,

@@ -35,6 +35,11 @@
       ],
       "cupomCode": "",
       "totalToPay": 71.7,
+      "donation": {
+        "ongId": "5d9aab94975a5b2017174ae8",
+        "ongName": "Greenpeace",
+        "quantity": 3
+      },
       "extraDetails": "Carne mal passada",
       "creationDate": "2019-09-15T19:54:10.464Z",
       "__v": 0
@@ -80,6 +85,11 @@
       ],
       "cupomCode": "",
       "totalToPay": 79.7,
+      "donation": {
+        "ongId": "5d9aab94975a5b2017174ae8",
+        "ongName": "Greenpeace",
+        "quantity": 3
+      },
       "extraDetails": "Carne ao ponto",
       "creationDate": "2019-09-15T19:54:10.464Z",
       "__v": 0
@@ -119,6 +129,11 @@
       ],
       "cupomCode": "",
       "totalToPay": 33.9,
+      "donation": {
+        "ongId": "5d9aab94975a5b2017174ae8",
+        "ongName": "Greenpeace",
+        "quantity": 3
+      },
       "extraDetails": "Carne ao ponto",
       "creationDate": "2019-09-15T19:54:10.464Z",
       "__v": 0
@@ -193,6 +208,21 @@
               "description": "Nosso WHOPPER® Sandwich é um quilo de carne saborosa grelhada em chamas, coberta com tomates suculentos, alface fresca, maionese cremosa, ketchup, picles crocantes e cebola branca fatiada em um pão macio de sementes de gergelim. Servido com um lado pequeno de batatas fritas bem cortadas quentes e grossas ou anéis de cebola dourados e uma pequena bebida de sua escolha para fazer uma refeição."
           }
       ],
+      "address": {
+        "postalCode": "01538001",
+        "addressNumber": 1770,
+        "complement": "",
+        "street": "Av. Lins de Vasconcelos",
+        "city": "São Paulo",
+        "state": "SP",
+        "district": "Cambuci"
+      },
+      "donation": {
+        "total": 24.799999999999997,
+        "ongId": "5d9aab94975a5b2017174ae8",
+        "ongName": "Greenpeace",
+        "ongCategory": "Meio Ambiente"
+      },
       "creationDate": "2019-09-15T17:00:48.505Z",
       "__v": 0
     }

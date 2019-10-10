@@ -14,6 +14,8 @@ const OrderDetails = ({ order }) => {
     discount,
     totalToPay,
     status,
+    donation,
+    extraDetails,
   } = order || {};
   const [selected, setSelected] = useState(getOrderStatusByCode(status));
 
@@ -27,11 +29,15 @@ const OrderDetails = ({ order }) => {
       <Section hasOrder={order}>
         {order && (
           <>
-            <CustomerInfo customer={customer} />
+            <CustomerInfo
+              customer={customer}
+              donation={donation}
+            />
             <OrderItems
               items={items}
               discount={discount}
               totalToPay={totalToPay}
+              extraDetails={extraDetails}
             />
             <OrderActions order={order} optionSelected={selected} setSelected={setSelected} />
           </>

@@ -9,4 +9,4 @@ const config = {
 
 const BRL = (value) => currency(value, config);
 
-export const formatMoney = (value) => BRL(value, config).format(true);
+export const formatMoney = (value) => console.log(value) || BRL(value, config).format(true);
