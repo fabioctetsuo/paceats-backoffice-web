@@ -44,21 +44,37 @@ const Reports = () => {
       accessor: ({ donation = {} }) => donation.ongName,
     },
     {
+      id: 'paceats-intermediation-cost',
+      Header: 'Custo de intermediação da Paceats',
+      accessor: 'totalToPay',
+      // eslint-disable-next-line react/prop-types
+      Cell: ({ value }) => {
+        const paceatsIntermediation = value * 0.2;
+        const intermediationCost = paceatsIntermediation * 0.05;
+        const total = paceatsIntermediation - intermediationCost;
+        return <span className="number">{formatMoney(total)}</span>;
+      },
+    },
+    {
       id: 'organization-intermediation-cost',
       Header: 'Custo de intermediação da ONG',
-      accessor: ({ donation = {} }) => donation.quantity,
+      accessor: 'totalToPay',
       // eslint-disable-next-line react/prop-types
-      Cell: ({ value }) => <span className="number">{formatMoney(value)}</span>,
+      Cell: ({ value }) => {
+        // eslint-disable-next-line react/prop-types
+        const paceatsIntermediation = value * 0.2;
+        const intermediationCost = paceatsIntermediation * 0.05;
+        return <span className="number">{formatMoney(intermediationCost)}</span>;
+      },
     },
     {
       id: 'restaurant-receipt-value',
       Header: 'Receita Líquida',
       accessor: 'totalToPay',
       // eslint-disable-next-line react/prop-types
-      Cell: ({ value, original }) => {
-        // eslint-disable-next-line react/prop-types
-        const { quantity } = original.donation;
-        return <span className="number">{formatMoney(value - quantity)}</span>;
+      Cell: ({ value }) => {
+        const paceatsIntermediation = value * 0.2;
+        return <span className="number">{formatMoney(value - paceatsIntermediation)}</span>;
       },
     },
     {
