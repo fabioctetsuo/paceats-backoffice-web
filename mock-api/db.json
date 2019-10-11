@@ -24,13 +24,17 @@
           "quantity": 1,
           "_id": "5d7e96e2064f734e1db34bd3",
           "name": "Whopper Jr",
-          "price": 25.9
+          "price": 25.9,
+          "originalPrice": 35.0,
+          "timeToPay": 3
         },
         {
           "quantity": 2,
           "_id": "5d7e96e2064f734e1db34bd2",
           "name": "Big King",
-          "price": 22.9
+          "price": 22.9,
+          "originalPrice": 33.0,
+          "timeToPay": 3
         }
       ],
       "cupomCode": "",
@@ -68,13 +72,17 @@
           "quantity": 1,
           "_id": "5d7e96e2064f734e1db34bd3",
           "name": "Whopper Jr",
-          "price": 25.9
+          "price": 25.9,
+          "originalPrice": 35.0,
+          "timeToPay": 3
         },
         {
           "quantity": 2,
           "_id": "5d7e96e2064f734e1db34bd2",
           "name": "Big King",
-          "price": 22.9
+          "price": 22.9,
+          "originalPrice": 35.0,
+          "timeToPay": 3
         },
         {
           "quantity": 1,
@@ -118,13 +126,17 @@
           "quantity": 1,
           "_id": "5d7e96e2064f734e1db34bd3",
           "name": "Whopper Jr",
-          "price": 25.9
+          "price": 25.9,
+          "originalPrice": 35.0,
+          "timeToPay": 3
         },
         {
           "quantity": 1,
           "_id": "5d7e96e2064f734e1db34bd2",
           "name": "Coca Cola 600ml",
-          "price": 8.0
+          "price": 8.0,
+          "originalPrice": 10.0,
+          "timeToPay": 3
         }
       ],
       "cupomCode": "",
@@ -189,6 +201,8 @@
               "_id": "1",
               "name": "Bacon King Jr.",
               "price": 35,
+              "originalPrice": 40.0,
+              "timeToPay": 3,
               "description": "Apresentando o sanduíche BACON KING ™ Jr., embalagem menor, com o mesmo sabor GRANDE. Dois hambúrgueres de carne 100% grelhados à chama, cobertos com bacon defumado grosso, queijo americano derretido, ketchup e maionese cremosa em um pão torrado de gergelim."
           },
           {
@@ -197,6 +211,8 @@
               "_id": "2",
               "name": "Stacker Triplo",
               "price": 32,
+              "originalPrice": 39.0,
+              "timeToPay": 2,
               "description": "Nosso sanduíche Triple STACKER KING ™ apresenta mais de ¾ lb. * de carne saborosa 100% grelhada em chamas, coberta com bacon defumado, queijo americano derretido e nosso molho Stacker especial em um pão de gergelim torrado."
           },
           {
@@ -205,6 +221,8 @@
               "_id": "3",
               "name": "Quarteirão",
               "price": 28,
+              "originalPrice": 35.0,
+              "timeToPay": 3,
               "description": "Nosso WHOPPER® Sandwich é um quilo de carne saborosa grelhada em chamas, coberta com tomates suculentos, alface fresca, maionese cremosa, ketchup, picles crocantes e cebola branca fatiada em um pão macio de sementes de gergelim. Servido com um lado pequeno de batatas fritas bem cortadas quentes e grossas ou anéis de cebola dourados e uma pequena bebida de sua escolha para fazer uma refeição."
           }
       ],

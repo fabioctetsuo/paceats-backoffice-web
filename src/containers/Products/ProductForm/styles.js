@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Input } from '@rocketseat/unform';
+import { Input, Select } from '@rocketseat/unform';
 import { Row } from 'react-awesome-styled-grid';
 
 export const Container = styled.div`
@@ -13,6 +13,14 @@ export const CustomRow = styled(Row)`
 `;
 
 export const CustomInput = styled(Input)`
+  height: 40px;
+  border-radius: 8px;
+  padding: 8px;
+  border: 1px solid #d0d0d0;
+  outline: none;
+`;
+
+export const CustomSelect = styled(Select)`
   height: 40px;
   border-radius: 8px;
   padding: 8px;

@@ -7,6 +7,7 @@ import {
   Container,
   CustomInput,
   CustomRow,
+  CustomSelect,
 } from './styles';
 import PrimaryButton from '../../../components/Button/Primary';
 import SecondaryButton from '../../../components/Button/Secondary';
@@ -20,9 +21,18 @@ const getAction = (hasData) => (hasData ? UPDATE_ACTION : ADD_ACTION);
 
 const getParsedPayload = (payload) => ({
   ...payload,
+  originalPrice: parseFloat(payload.originalPrice),
   price: parseFloat(payload.price),
   quantity: parseInt(payload.quantity, 10),
+  timeToPay: parseInt(payload.timeToPay, 10),
 });
+
+const hours = [
+  { id: 1, title: '1 hora' },
+  { id: 2, title: '2 horas' },
+  { id: 3, title: '3 horas' },
+  { id: 4, title: '4 horas' },
+];
 
 const ProductForm = ({ onCancel, productData }) => {
   const dispatch = useDispatch();
@@ -63,7 +73,7 @@ const ProductForm = ({ onCancel, productData }) => {
                 placeholder="Digite o nome do produto"
               />
             </Col>
-            <Col xs={12} sm={4} md={6} lg={6} xl={6}>
+            <Col xs={12} sm={4} md={6} lg={8} xl={8}>
               <CustomInput
                 required
                 name="description"
@@ -72,18 +82,9 @@ const ProductForm = ({ onCancel, productData }) => {
                 placeholder="Digite uma descrição para ele"
               />
             </Col>
-            <Col xs={12} sm={4} md={6} lg={2} xl={2}>
-              <CustomInput
-                required
-                name="price"
-                label="Preço"
-                disabled={loading}
-                placeholder="Digite o valor"
-              />
-            </Col>
           </CustomRow>
           <CustomRow>
-            <Col xs={4} sm={8} md={10} lg={10} xl={10}>
+            <Col xs={4} sm={8} md={8} lg={8} xl={8}>
               <CustomInput
                 required
                 name="image"
@@ -92,6 +93,26 @@ const ProductForm = ({ onCancel, productData }) => {
                 placeholder="https://www.bk.com/sites/default/files/02982-1%20BK_Web_WHOPPER_500x540_CR.png"
               />
             </Col>
+            <Col xs={12} sm={4} md={6} lg={2} xl={2}>
+              <CustomInput
+                required
+                name="originalPrice"
+                label="Preço original"
+                disabled={loading}
+                placeholder="Digite o valor do preço original"
+              />
+            </Col>
+            <Col xs={12} sm={4} md={6} lg={2} xl={2}>
+              <CustomInput
+                required
+                name="price"
+                label="Preço promocional"
+                disabled={loading}
+                placeholder="Digite o valor do preço promocional"
+              />
+            </Col>
+          </CustomRow>
+          <CustomRow>
             <Col xs={4} sm={8} md={2} lg={2} xl={2}>
               <CustomInput
                 required
@@ -99,6 +120,16 @@ const ProductForm = ({ onCancel, productData }) => {
                 label="Quantidade"
                 disabled={loading}
                 placeholder="10"
+              />
+            </Col>
+            <Col xs={4} sm={8} md={2} lg={2} xl={2}>
+              <CustomSelect
+                required
+                name="timeToPay"
+                label="Validade"
+                options={hours}
+                disabled={loading}
+                placeholder="Validade"
               />
             </Col>
           </CustomRow>
