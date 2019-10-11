@@ -45,10 +45,7 @@ const Orders = ({ isMobileSized }) => {
   ];
 
   useEffect(() => {
-    const fetchData = async () => {
-      await dispatch(OrderActions.addOrderRequest());
-    };
-    fetchData();
+    dispatch(OrderActions.addOrderRequest());
   }, []);
 
   useEffect(() => {

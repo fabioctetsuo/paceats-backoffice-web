@@ -5,6 +5,7 @@ const config = {
   decimal: ',',
   symbol: 'R$',
   formatWithSymbol: true,
+  precision: 2,
 };
 
 const BRL = (value) => currency(value, config);

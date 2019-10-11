@@ -49,10 +49,8 @@ const Reports = () => {
       accessor: 'totalToPay',
       // eslint-disable-next-line react/prop-types
       Cell: ({ value }) => {
-        const paceatsIntermediation = value * 0.2;
-        const intermediationCost = paceatsIntermediation * 0.05;
-        const total = paceatsIntermediation - intermediationCost;
-        return <span className="number">{formatMoney(total)}</span>;
+        const intermediationCost = value * 0.2;
+        return <span className="number">{formatMoney(intermediationCost)}</span>;
       },
     },
     {
@@ -62,8 +60,7 @@ const Reports = () => {
       // eslint-disable-next-line react/prop-types
       Cell: ({ value }) => {
         // eslint-disable-next-line react/prop-types
-        const paceatsIntermediation = value * 0.2;
-        const intermediationCost = paceatsIntermediation * 0.05;
+        const intermediationCost = value * 0.05;
         return <span className="number">{formatMoney(intermediationCost)}</span>;
       },
     },
@@ -74,7 +71,9 @@ const Reports = () => {
       // eslint-disable-next-line react/prop-types
       Cell: ({ value }) => {
         const paceatsIntermediation = value * 0.2;
-        return <span className="number">{formatMoney(value - paceatsIntermediation)}</span>;
+        const intermediationCost = value * 0.05;
+        const restaurantReceipt = value - (paceatsIntermediation + intermediationCost);
+        return <span className="number">{formatMoney(restaurantReceipt)}</span>;
       },
     },
     {
