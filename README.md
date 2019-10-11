@@ -1,12 +1,16 @@
 # PacEats Backoffice
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ecbd68c4-71fc-44bd-8d6e-9f8e122dca95/deploy-status)](https://app.netlify.com/sites/paceats-backoffice/deploys)
 
-This is the official repository of paceats backoffice application
+This is the official repository of paceats backoffice web application
 
 ### Prerequisites
 
-To run this project, you need to setup the yarn in your machine
+To run this project, you need to download and install the following dependencies:
+- node (v12.10.0)
+- npm (v6.10.3)
+- yarn (1.17.3)
 
-### Installing
+### Installing project
 
 Clone this repo, then go to the root of the project and install all the dependencies:
 ```
@@ -33,4 +37,4 @@ http://localhost:4000/
 
 ## Authors
 
-* **Fabio Tetsuo** - *Initial work* - [PurpleBooth](https://github.com/fabioctetsuo)
+* **Fabio Tetsuo** - [Github](https://github.com/fabioctetsuo)
